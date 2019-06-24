@@ -1,0 +1,36 @@
+﻿@section head
+{
+    <style>
+        body {
+            margin: 50px;
+            padding: 0px;
+        }
+    </style>
+}
+
+@*
+    1.<ol>标签定义了一个有序列表. 列表排序以数字来显示。
+    2.<li>标签来定义列表选项。
+*@
+<div id="app">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+
+@section script
+{
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todos: [{ text: 'Learn JavaScript' }, { text: 'Learn Vue' }, { text: 'Build something awesome'}]
+            }
+        });  
+
+        //Console 添加及时更新
+        //app.todos.push({text:'newItem'})
+    </script>
+}

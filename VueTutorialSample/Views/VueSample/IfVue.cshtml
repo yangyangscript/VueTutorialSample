@@ -1,0 +1,30 @@
+﻿@section head
+{
+    <style>
+        body {
+            margin: 50px;
+            padding: 0px;
+        }
+    </style>
+}
+
+    <div id="apd">
+        @*1.span标签是行内元素标签，不分行
+        2.v-if 用来显示页面元素
+        *@
+        <span v-if="seen">
+            Now you see me
+        </span>
+    </div>
+
+@section script
+{
+    <script>
+        var app = new Vue({
+            el: '#apd',
+            data: {
+                seen:true
+            }
+        });
+    </script>
+}
