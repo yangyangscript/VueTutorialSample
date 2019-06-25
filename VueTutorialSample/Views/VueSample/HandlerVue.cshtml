@@ -1,1 +1,40 @@
-﻿
+﻿@section head
+{
+    <style>
+        body {
+            margin: 50px;
+            padding: 0px;
+        }
+    </style>
+}
+
+@*
+    <p>标签定义段落。
+    p元素会自动在其前后创建一些空白。 前后
+
+    2.v-on:click/mouseout/mouseover/mousedown click事件也可以是其他的事件
+    3.v-on都可以简写为@
+*@
+
+
+<div id="app">
+    <p>{{message}}</p>
+    <button @Html.Raw('@')click="reverseMessage">reverseMessage</button>
+</div>
+
+@section script
+{
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hellow Vue JS !'
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+}
